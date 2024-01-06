@@ -27,7 +27,7 @@ const Kandang = () => {
                 <div className='border rounded-md bg-white p-4'>
                     <div className="flex items-center justify-between">
                         <h5 className='font-bold text-lg'>Data Kandang</h5>
-                        <button className='bg-green-600 text-white px-2 py-1.5 rounded'
+                        <button className='bg-green-600 text-white px-2 py-1.5 rounded font-semibold'
                             onClick={() => handleOpenModal()}
                         >+ <span className='sm:inline-block hidden'>Tambah Data</span></button>
                     </div>

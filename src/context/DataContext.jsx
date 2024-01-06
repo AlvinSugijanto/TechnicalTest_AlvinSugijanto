@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useRef, useState } from 'react';
 import kandangData from '../resources/dataKandang';
 
 
@@ -8,12 +8,14 @@ export const DataProvider = ({ children }) => {
 
     const [data, setData] = useState(kandangData);
 
+    let dataLength = useRef(data.length);
+
     const handleAddData = (newData) => {
         const temp = {
             ...newData,
-            id: data.length + 1
+            id: dataLength.current + 1
         }
-
+        dataLength.current += 1;
         setData([...data, temp]);
     }
 
