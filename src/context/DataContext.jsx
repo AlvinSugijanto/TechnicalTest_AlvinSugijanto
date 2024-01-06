@@ -11,12 +11,17 @@ export const DataProvider = ({ children }) => {
     let dataLength = useRef(data.length);
 
     const handleAddData = (newData) => {
-        const temp = {
-            ...newData,
-            id: dataLength.current + 1
+
+        if (newData.nama != "") {
+
+            const temp = {
+                ...newData,
+                id: dataLength.current + 1
+            }
+            dataLength.current += 1;
+            setData([...data, temp]);
         }
-        dataLength.current += 1;
-        setData([...data, temp]);
+
     }
 
     const handleEditData = (updatedData) => {
